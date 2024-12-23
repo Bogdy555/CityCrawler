@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class GroundMob : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform Player;
+    public float moveSpeed = 3f;
+    public float followRange = 7f;
+    public float stopDistance = 1f;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float distanceToPlayer = Vector2.Distance(transform.position, Player.position);
+
+        if (distanceToPlayer <= followRange && distanceToPlayer > stopDistance)
+        {
+            FollowPlayer();
+        }
+    }
+
+    void FollowPlayer()
+    {
+        Vector2 direction = Player.position - transform.position;
+        direction.Normalize();
+
+        transform.position = new Vector2(transform.position.x + direction.x * moveSpeed * Time.deltaTime, transform.position.y);
     }
 }
+

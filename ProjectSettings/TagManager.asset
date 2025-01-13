@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - TerrainLayer
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 844397329
+    locked: 0
+  - name: Ground
+    uniqueID: 1270124427
+    locked: 0
+  - name: Buildings
+    uniqueID: 1289887749
+    locked: 0
+  - name: Platforms
+    uniqueID: 2546200191
     locked: 0

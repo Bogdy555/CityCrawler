@@ -19,6 +19,17 @@ public class Character : MonoBehaviour
     [SerializeField]
     float JumpSpeed = 5.0f;
 
+    [SerializeField]
+    LayerMask TerrainLayer;
+
+    [SerializeField]
+    float castDistanceDown = 0.5f;
+
+    [SerializeField]
+    Vector2 groundDetectionBoxSize = new Vector2(0.8f, 0.3f);
+
+    public bool grounded = false;
+
     Rigidbody2D RigidBody;
 
     void Start()
@@ -28,6 +39,8 @@ public class Character : MonoBehaviour
 
     void Update()
     {
+        grounded = IsGrounded();
+
         if(Input.GetKey(KeyCode.A) && RigidBody.velocity.x > -TopSpeed)
         {
             RigidBody.AddForce(new Vector2(-1.0f, 0.0f) * Force);
@@ -43,7 +56,7 @@ public class Character : MonoBehaviour
             RigidBody.AddForce(new Vector2(0.0f, -1.0f) * FallForce);
         }
 
-        if(Input.GetKey(KeyCode.Space) && IsGrounded())
+        if(Input.GetKey(KeyCode.Space) && grounded)
         {
             RigidBody.velocity = new Vector2(RigidBody.velocity.x, JumpSpeed);
         }
@@ -51,6 +64,19 @@ public class Character : MonoBehaviour
 
     bool IsGrounded()
     {
-        return true;
+        if (Physics2D.BoxCast(transform.position, groundDetectionBoxSize, 0, -transform.up, castDistanceDown, TerrainLayer))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+        void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(transform.position - transform.up * castDistanceDown, groundDetectionBoxSize);
     }
 }

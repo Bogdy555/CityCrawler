@@ -35,6 +35,23 @@ public class Character : MonoBehaviour
     void Start()
     {
         RigidBody = GetComponent<Rigidbody2D>();
+        updatePosition();
+    }
+
+    public void newSave()
+    {
+        RigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    public void updatePosition()
+    {
+        if (StaticData.newData == true)
+        {
+            health = StaticData.health ?? health;
+            transform.position = StaticData.position ?? transform.position;
+
+            StaticData.newData = false;
+        }
     }
 
     void Update()
@@ -59,6 +76,11 @@ public class Character : MonoBehaviour
         if(Input.GetKey(KeyCode.Space) && grounded)
         {
             RigidBody.velocity = new Vector2(RigidBody.velocity.x, JumpSpeed);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            SaveSystem.SavePlayer(this);
         }
     }
 

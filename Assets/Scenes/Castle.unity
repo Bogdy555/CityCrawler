@@ -262,11 +262,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 487745476930558189, guid: 0f218e8e35f9182428739652d60e1f0f, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 487745476930558189, guid: 0f218e8e35f9182428739652d60e1f0f, type: 3}
       propertyPath: m_SortingLayerID
       value: -765789569
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197171678426125483, guid: 0f218e8e35f9182428739652d60e1f0f, type: 3}
+      propertyPath: MaxCamPos.x
+      value: 39.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197171678426125483, guid: 0f218e8e35f9182428739652d60e1f0f, type: 3}
+      propertyPath: MaxCamPos.y
+      value: 2.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197171678426125483, guid: 0f218e8e35f9182428739652d60e1f0f, type: 3}
+      propertyPath: MinCamPos.x
+      value: -39.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197171678426125483, guid: 0f218e8e35f9182428739652d60e1f0f, type: 3}
+      propertyPath: MinCamPos.y
+      value: -2.86
       objectReference: {fileID: 0}
     - target: {fileID: 5598047040176170141, guid: 0f218e8e35f9182428739652d60e1f0f, type: 3}
       propertyPath: m_Name
@@ -758,7 +774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727953341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4, y: -13.51, z: 0}
+  m_LocalPosition: {x: 4.4, y: -8.6, z: 0}
   m_LocalScale: {x: 180.25862, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

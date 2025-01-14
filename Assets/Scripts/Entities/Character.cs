@@ -33,9 +33,20 @@ public class Character : MonoBehaviour
 
 	Rigidbody2D RigidBody;
 
+	[SerializeField]
+	Vector2 MinCamPos;
+	[SerializeField]
+	Vector2 MaxCamPos;
+
+	Transform Camera;
+	Camera CameraComponent;
+
 	void Start()
 	{
 		RigidBody = GetComponent<Rigidbody2D>();
+
+		Camera = transform.GetChild(0);
+		CameraComponent = CameraComponent.GetComponent<Camera>();
 	}
 
 	void Update()
@@ -66,6 +77,8 @@ public class Character : MonoBehaviour
 		{
 			RigidBody.velocity = new Vector2(RigidBody.velocity.x, JumpSpeed);
 		}
+
+		Camera.position = new Vector3(Mathf.Max(Mathf.Min(transform.position.x, MaxCamPos.x), MinCamPos.x), Mathf.Max(Mathf.Min(transform.position.y, MaxCamPos.y), MinCamPos.y), -10.0f);
 	}
 
 	bool IsGrounded()

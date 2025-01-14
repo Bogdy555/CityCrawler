@@ -32,6 +32,7 @@ public class Character : MonoBehaviour
 
     Rigidbody2D RigidBody;
 
+    public int health = 3;
     void Start()
     {
         RigidBody = GetComponent<Rigidbody2D>();

@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Mobs
   layers:
   - Default
   - TransparentFX
@@ -52,6 +53,9 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 2546200191
+    locked: 0
+  - name: Mobs
+    uniqueID: 3403945253
     locked: 0
   - name: Player
     uniqueID: 3529177727

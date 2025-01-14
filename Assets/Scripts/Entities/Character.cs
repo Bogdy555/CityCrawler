@@ -9,16 +9,16 @@ public class Character : MonoBehaviour
 	float Force = 10.0f;
 
 	[SerializeField]
-	float FallForce = 3.0f;
+	float FallForce = 10.0f;
 
 	[SerializeField]
-	float TopSpeed = 5.0f;
+	float TopSpeed = 10.0f;
 
 	[SerializeField]
-	float TopFallSpeed = 10.0f;
+	float TopFallSpeed = 15.0f;
 
 	[SerializeField]
-	float JumpSpeed = 5.0f;
+	float JumpSpeed = 10.0f;
 
 	[SerializeField]
 	LayerMask TerrainLayer;

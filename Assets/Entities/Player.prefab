@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5598047040176170141}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7099476, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -765789569
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.59056604, g: 0.9876058, b: 1, a: 1}
@@ -130,9 +130,13 @@ MonoBehaviour:
   FallForce: 3
   TopSpeed: 5
   TopFallSpeed: 10
-  JumpSpeed: 5
-  health: 0
-  RigidBody: {fileID: 0}
+  JumpSpeed: 10
+  TerrainLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  castDistanceDown: 0.56
+  groundDetectionBoxSize: {x: 0.8, y: 0.4}
+  grounded: 0
 --- !u!61 &8666808215206234222
 BoxCollider2D:
   m_ObjectHideFlags: 0

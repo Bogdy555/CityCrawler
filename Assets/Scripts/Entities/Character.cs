@@ -24,6 +24,21 @@ public class Character : MonoBehaviour
     void Start()
     {
         RigidBody = GetComponent<Rigidbody2D>();
+<<<<<<< Updated upstream
+=======
+        updatePosition();
+    }
+
+    public void updatePosition()
+    {
+        if (StaticData.newData == true)
+        {
+            health = StaticData.health ?? health;
+            transform.position = StaticData.position ?? transform.position;
+
+            StaticData.newData = false;
+        }
+>>>>>>> Stashed changes
     }
 
     void Update()
@@ -47,6 +62,22 @@ public class Character : MonoBehaviour
         {
             RigidBody.velocity = new Vector2(RigidBody.velocity.x, JumpSpeed);
         }
+<<<<<<< Updated upstream
+=======
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            // SaveSystem.SavePlayer(this);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            SaveSystem.SavePlayer(this);
+        }
+>>>>>>> Stashed changes
     }
 
     bool IsGrounded()
